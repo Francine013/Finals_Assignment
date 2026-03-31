@@ -1,0 +1,96 @@
+/* ============================================
+   Finals A1 — index.css
+   Single default theme: clean indigo palette
+   ============================================ */
+
+:root {
+  --primary: #6366f1;
+  --bg: #ffffff;
+  --text: #1f2937;
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --transition: all 0.3s ease;
+}
+
+/* ---- Reset ---- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: var(--transition);
+  min-height: 100vh;
+}
+
+/* ---- Typography ---- */
+h1 { font-size: 2.75rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem;    margin-bottom: 1rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+p  { font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem; opacity: 0.85; }
+
+/* ---- Navbar ---- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.nav-links { display: flex; gap: 2rem; }
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  transition: var(--transition);
+  opacity: 0.7;
+}
+
+.nav-links a:hover  { color: var(--primary); opacity: 1; }
+
+/* Active state via NavLink */
+.nav-links a.active {
+  color: var(--primary);
+  opacity: 1;
+  background: rgba(99, 102, 241, 0.08);
+  border-bottom: 2px solid var(--primary);
+}
+
+/* ---- Layout ---- */
+.container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+
+.hero {
+  text-align: center;
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, var(--bg) 0%, rgba(99, 102, 241, 0.08) 100%);
+}
+
+/* ---- Cards ---- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
