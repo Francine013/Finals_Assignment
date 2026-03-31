@@ -1,6 +1,6 @@
 import { Navbar, Footer, Header } from "../components/Layout";
 import { Hero, Features, Bio, Skills, Journey } from "../components/PageComponents";
-import { ContactInfo } from "../components/ContactComponents";
+import { ContactInfo, ContactForm } from "../components/ContactComponents";
 import { Link } from "react-router-dom";
 
 export const Home = () => (
@@ -32,8 +32,9 @@ export const Contact = () => (
   <>
     <Navbar />
     <main className="container">
-      <Header title="Get In Touch" subtitle="Have a question or just want to say hello?" />
+      <Header title="Get In Touch" subtitle="Have a question or just want to say hello? Send a message below!" />
       <ContactInfo />
+      <ContactForm />
     </main>
     <Footer />
   </>
