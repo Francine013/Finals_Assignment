@@ -21,10 +21,14 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem("app-theme", theme);
   }, [theme]);
 
+  // Update body class for global styling
+  useEffect(() => {
+    document.body.className = theme === "default" ? "" : `theme-${theme}`;
+  }, [theme]);
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      {/* 3. Distribute the atmosphere to the entire tree */}
-      <div className={`theme-${theme}`} style={{ minHeight: "100vh" }}>
+      <div className={theme === "default" ? "" : `theme-${theme}`} style={{ minHeight: "100vh" }}>
         {children}
       </div>
     </ThemeContext.Provider>
